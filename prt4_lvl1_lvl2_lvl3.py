@@ -52,15 +52,8 @@ def login_function(login, password):
         person_data = json.load(file)
         login = input("Введите ваш логин: ").lower()
         if login not in person_data.keys():
-            print("Пользователь с таким логином еще не зарегистрирован!\nЖелаете выполнить регистрацию?(да\нет)")
-            while True:
-                uns2 = input().lower()
-                if uns2 == "да":
-                    register(login, password)
-                elif uns2 == "нет":
-                    break
-                else:
-                    print("Некорретный ввод! Введите да или нет")
+            print("Неверный логин!")
+            login_function(login, password)
         elif login in person_data.keys():
             password = input("Введите ваш пароль: ").lower()
             while True:
@@ -74,15 +67,6 @@ def login_function(login, password):
                 else:
                     print("Упс! Что-то пошло не так. Попробуйте позже")
                     user_operation(login, password)
-        # elif login in person_data.keys():
-        #     password = input("Введите ваш пароль: ").lower()
-        #     for item in person_data:
-        #         if login and password in item.items():
-
-
-
-
-
 person_data = {}
 login = ""
 password = ""

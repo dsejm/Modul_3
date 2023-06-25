@@ -1,6 +1,6 @@
 def split(s):
     for i in s:
-        if i == ",":
+        if i == "," or "-" or "!" or ".": # Текс брал не с платформы, а загуглил и скопировал. На сайте из знаков препинания были только запятые)
             new_s = s.replace(i, "")
     split_s = new_s.split()
     return split_s
